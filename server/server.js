@@ -3,6 +3,9 @@ const bodyParser = require('body-parser')
 const session = require('express-session')
 const massive = require('massive')
 
+//controllers
+const AuthCtrl = require('./controller/AuthCtrl')
+
 require('dotenv').config()
 
 const app = express()
@@ -19,13 +22,6 @@ app.use(session({
     saveUninitialized: true,
 }))
 app.use(bodyParser.json())
-
-
-//app.get('/', )
-//app.post('/', )
-//app.put('/', )
-//app.delete('/', )
-
 
 
 app.listen( port, () => {
