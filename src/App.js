@@ -3,6 +3,7 @@ import { Route, Switch } from 'react-router-dom';
 import { withRouter } from 'react-router';
 
 // Components 
+import Landing from './Components/Landing/Landing'
 import Accessory from './Components/Accessory/Accessory'
 import Jacket from './Components/Jacket/Jacket'
 import Shirt from './Components/Shirt/Shirt'
