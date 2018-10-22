@@ -1,6 +1,10 @@
 import React, { Component } from 'react'
 import axios from 'axios'
 
+//  Components
+import Nav from '../Nav/Nav'
+import Footer from '../Footer/Footer'
+
 class Landing extends Component {
     constructor() {
         super()
@@ -14,7 +18,11 @@ class Landing extends Component {
     render() {
         return (
             <div>
-                Landing
+                <Nav/>
+
+                <hr/>
+                * Insert Photos Here *
+                <Footer/>
             </div>
         )
     }
