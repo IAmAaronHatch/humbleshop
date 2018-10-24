@@ -5,7 +5,13 @@ import { Link } from 'react-router-dom'
 // Components 
 import Cart from '../Cart/Cart'
 
+// Methods 
+import methods from '../../util/methods'
+
+// CSS
 import './Nav.css'
+
+let { login } = methods
 
 class Nav extends Component {
     constructor() {
@@ -16,30 +22,32 @@ class Nav extends Component {
         }
     }
 
-    login = () => {
-        alert('Login')
-    }
-
 
     render() {
         return (
             <div>
                 {/* * Insert Logo Here * */}
-                <Link className='Main-Logo' to='/'>Humble Shop</Link>
+                <div className='main-center'>
+                    <Link className='main-logo' to='/'>Humble Shop</Link>
 
-
-                {/* Right Side */}
-                <div>
-                    <p onClick={this.login}> Login </p> |
+                    {/* Right Side */}
+                    <div>
+                        <p onClick={login}> Login </p> |
                     <Cart />
+                    </div>
+
                 </div>
                 <hr />
-                <div>
-                    <Link to='/accessories'> Accessories </Link>
-                    <Link to='/shirts'> Shirts </Link>
-                    <Link to='/jackets'> Jackets </Link>
+                <div className='link-main'>
+                    <div className='link-container'>
+                        <Link to='/shirts' id='link'> shirts . </Link>
+                        <Link to='/jackets' id='link'> jackets . </Link>
+                        <Link to='/accessories' id='link'> accessories . </Link>
+                    </div>
                 </div>
-                
+
+                <hr />
+
             </div>
         )
     }

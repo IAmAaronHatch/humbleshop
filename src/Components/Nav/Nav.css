@@ -1,5 +1,29 @@
-.Main-Logo {
+.main-center{
+}
+.main-logo {
     text-decoration: none;
     color: #2f2f2f;
     font-size: 40px;
+}
+
+.link-main {
+    width: 100%;
+    height: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.link-container {
+    width: 60%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+}
+
+#link {
+    text-decoration: none;
+    color: #2f2f2f;
+    font-size: 16px
 }

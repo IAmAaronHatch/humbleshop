@@ -5,6 +5,8 @@ const massive = require('massive')
 
 //controllers
 const AuthCtrl = require('./controller/AuthCtrl')
+const CartCtrl = require('./controller/CartCtrl')
+const ProductCtrl = require('./controller/ProductCtrl')
 
 require('dotenv').config()
 
@@ -23,6 +25,21 @@ app.use(session({
 }))
 app.use(bodyParser.json())
 
+function clog (text) {
+    console.log('Successfully Completed Task: ', text)
+    next()
+}
+
+
+// auth endpoints
+app.get('/api/callback', AuthCtrl.auth)
+app.get('/api/currentUser', AuthCtrl.currentUser)
+app.delete('/api/logout', AuthCtrl.logout)
+
+
+// app.get('*', (req, res) => {
+//     res.sendFile(path.join(__dirname, '../build/index.html'));
+// });
 
 app.listen( port, () => {
     console.log(`Never gonna give ${port} up, Never gonna let ${port} down.`)
