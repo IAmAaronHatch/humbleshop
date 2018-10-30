@@ -25,16 +25,25 @@ app.use(session({
 }))
 app.use(bodyParser.json())
 
-function clog (text) {
-    console.log('Successfully Completed Task: ', text)
-    next()
-}
+// app.use(express.static(`${__dirname}/../build`))
 
 
 // auth endpoints
 app.get('/api/callback', AuthCtrl.auth)
 app.get('/api/currentUser', AuthCtrl.currentUser)
 app.delete('/api/logout', AuthCtrl.logout)
+
+// product endpoints
+// app.get('/api/products', ProductCtrl.getProducts)
+
+// cart endpoints
+// app.get('/api/cart', CartCtrl.getCart)
+// app.post('/api/cart/product?={product_id}', CartCtrl.addToCart)
+// app.put('/api/cart/quantity', CartCtrl.updateQuantityCart)
+// app.delete('/api/cart/delete/:id', CartCtrl.deleteFromCart)
+
+// app.post('/api/checkout)
+
 
 
 // app.get('*', (req, res) => {
