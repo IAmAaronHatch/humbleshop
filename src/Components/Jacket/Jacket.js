@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import axios from 'axios'
+// import axios from 'axios'
 import Nav from '../Nav/Nav';
 import Footer from '../Footer/Footer';
 

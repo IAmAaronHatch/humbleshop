@@ -1,24 +1,17 @@
 import React, { Component } from 'react'
-import axios from 'axios'
+// import axios from 'axios'
 
 class Footer extends Component {
-    constructor() {
-        super()
-
-        this.state = {
-
-        }
-    }
-
 
     render() {
         return (
             <div>
-                Footer
+                * Insert Mail Insert *
+
+                * little Logo Home Button *
+
                 * Insert Twitter *
                 * Insert Instagram *
-                * Insert Mail *
-
                 {/* About Page? */}
             </div>
         )
