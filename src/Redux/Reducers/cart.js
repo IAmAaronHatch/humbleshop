@@ -28,31 +28,31 @@ export default function reducer (state = initialState, action) {
     }
 }
 
-function getCart () {
+export function getCart () {
     return {
         type: GET_CART,
         payload: null
     }
 }
-function addToCart () {
+export function addToCart () {
     return {
         type: ADD_TO_CART,
         payload: null
     }
 }
-function updateQuantity () {
+export function updateQuantity () {
     return {
         type: UPDATE_QUANTITY,
         payload: null
     }
 }
-function deleteFromCart () {
+export function deleteFromCart () {
     return {
         type: DELETE_FROM_CART,
         payload: null
     }
 }
-function checkout () {
+export function checkout () {
     return {
         type: CHECKOUT,
         payload: null

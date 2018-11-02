@@ -34,11 +34,11 @@ app.get('/api/currentUser', AuthCtrl.currentUser)
 app.delete('/api/logout', AuthCtrl.logout)
 
 // product endpoints
-// app.get('/api/products', ProductCtrl.getProducts)
+app.get('/api/products', ProductCtrl.getProducts)
 
 // cart endpoints
 // app.get('/api/cart', CartCtrl.getCart)
-// app.post('/api/cart/product?={product_id}', CartCtrl.addToCart)
+// app.post('/api/cart/product/:id', CartCtrl.addToCart)
 // app.put('/api/cart/quantity', CartCtrl.updateQuantityCart)
 // app.delete('/api/cart/delete/:id', CartCtrl.deleteFromCart)
 
