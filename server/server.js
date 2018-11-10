@@ -34,7 +34,9 @@ app.get('/api/currentUser', AuthCtrl.currentUser)
 app.delete('/api/logout', AuthCtrl.logout)
 
 // product endpoints
-app.get('/api/products', ProductCtrl.getProducts)
+app.get('/api/products/shirt', ProductCtrl.getShirt)
+app.get('/api/products/jacket', ProductCtrl.getJacket)
+app.get('/api/products/acc', ProductCtrl.getAcc)
 
 // cart endpoints
 // app.get('/api/cart', CartCtrl.getCart)

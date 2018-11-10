@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
-// import axios from 'axios'
-// import { connect } from 'react-redux'
-// import { getAccessories } from '../../Redux/Reducers/items'
+import axios from 'axios'
+import { connect } from 'react-redux'
+import { getAccessories } from '../../Redux/Reducers/items'
 import Nav from '../Nav/Nav';
 import Footer from '../Footer/Footer';
 
@@ -14,12 +14,12 @@ class Accessory extends Component {
         }
     }
 
-    // componentDidMount(){
-    //     let { getAccessories } = this.props
-    //     axios.get('/api/products').then(results => {
-    //         getAccessories(results.data)
-    //     })
-    // }
+    componentDidMount(){
+        let { getAccessories } = this.props
+        axios.get('/api/products/acc').then(results => {
+            getAccessories(results.data)
+        })
+    }
 
     openBuyDisplay = () => {
         this.setState({
@@ -30,27 +30,28 @@ class Accessory extends Component {
 
 
     render() {
+        console.log('acc page', this.props.accessories)
         return (
             <div>
                 <Nav/>
                 Accessories
-                {/* {this.props.accessory.map(accessory => {
+                {this.props.accessories.map(acc => {
                     return (
-                        <div key={accessory.id}>
-
+                        <div key={acc.product_id}>
+                        <span>{acc.product_name}</span>
                         </div>
                     )
-                })} */}
+                })}
                 <Footer />
             </div>
         )
     }
 }
 
-// let mapStateToProps = state => {
-//     return {
-//         accessories: state.items.accessories
-//     }
-// }
+let mapStateToProps = state => {
+    return {
+        accessories: state.items.accessories
+    }
+}
 
-export default Accessory
+export default connect(mapStateToProps, {getAccessories})(Accessory)

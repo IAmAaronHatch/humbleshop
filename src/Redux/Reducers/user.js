@@ -3,8 +3,6 @@ let initialState = {
     data: {},
 }
 
-// const FULFILLED = '_FULFILLED'
-
 const GET_USER = 'GET_USER'
 const LOGOUT = 'LOGOUT'
 

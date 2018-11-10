@@ -5,19 +5,19 @@ let initialState = {
     accessories: []
 }
 
-const FULFILLED = '_FULFILLED'
 
 const GET_SHIRT = 'GET_SHIRT'
 const GET_JACKET = 'GET_JACKET'
 const GET_ACCESSORY = 'GET_ACCESSORY'
 
 export default function reducer(state = initialState, action) {
+    console.log(state)
     switch (action.type) {
-        case GET_SHIRT + FULFILLED:
+        case GET_SHIRT:
             return { ...state, shirts: action.payload }
-        case GET_JACKET + FULFILLED:
+        case GET_JACKET:
             return { ...state, jackets: action.payload }
-        case GET_ACCESSORY + FULFILLED:
+        case GET_ACCESSORY:
             return { ...state, accessories: action.payload }
         default: return state
     }
@@ -36,6 +36,7 @@ export function getJackets (jackets) {
     }
 }
 export function getAccessories (acce) {
+    console.log('a', acce)
     return {
         type: GET_ACCESSORY,
         payload: acce

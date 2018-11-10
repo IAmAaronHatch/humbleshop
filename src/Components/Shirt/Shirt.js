@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
-// import axios from 'axios'
-// import { connect } from 'react-redux'
-// import { getShirts } from '../../Redux/Reducers/items'
+import axios from 'axios'
+import { connect } from 'react-redux'
+import { getShirts } from '../../Redux/Reducers/items'
 import Nav from '../Nav/Nav';
 import Footer from '../Footer/Footer';
 
@@ -14,12 +14,12 @@ class Shirt extends Component {
         }
     }
 
-    // componentDidMount() {
-    //     let { getShirts } = this.props
-    //     axios.get('/api/products').then(results => {
-    //         getShirts(results.data)
-    //     })
-    // }
+    componentDidMount() {
+        let { getShirts } = this.props
+        axios.get('/api/products/shirt').then(results => {
+            getShirts(results.data)
+        })
+    }
     
     openBuyDisplay = () => {
         this.setState ({
@@ -30,27 +30,28 @@ class Shirt extends Component {
     
 
     render() {
+        console.log('shirt page', this.props.shirts)
         return (
             <div>
                 <Nav />
                 Shirts
-                {/* {this.props.shirts.map(shirt => {
+                {this.props.shirts.map(shirt => {
                     return (
-                        <div key={shirt.id}>
-
+                        <div key={shirt.product_id}>
+                            <span>{shirt.product_name}</span>
                         </div>
                     )
-                })} */}
+                })}
                 <Footer />
             </div>
         )
     }
 }
 
-// let mapStateToProps = state => {
-//     return {
-//         shirts: state.items.shirts
-//     }
-// }
+let mapStateToProps = state => {
+    return {
+        shirts: state.items.shirts
+    }
+}
 
-export default Shirt
+export default connect(mapStateToProps, {getShirts})(Shirt)

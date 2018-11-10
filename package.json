@@ -46,6 +46,7 @@
       "public/*"
     ]
   },
+  "proxy": "http://localhost:4200",
   "nodeconfig": {
     "/auth/callback": {
       "target": "http://localhost:4200"
