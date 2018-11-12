@@ -31,7 +31,6 @@ class Jacket extends Component {
 
 
     render() {
-        console.log('jackets page', this.props.jackets)
         return (
             <div>
                 <Nav />

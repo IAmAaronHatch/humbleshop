@@ -18,6 +18,7 @@ export default function reducer(state = initialState, action) {
 }
 
 export function getUser (name) {
+    console.log(name)
     return {
         type: GET_USER,
         payload: name

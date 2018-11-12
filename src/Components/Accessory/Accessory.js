@@ -30,7 +30,6 @@ class Accessory extends Component {
 
 
     render() {
-        console.log('acc page', this.props.accessories)
         return (
             <div>
                 <Nav/>

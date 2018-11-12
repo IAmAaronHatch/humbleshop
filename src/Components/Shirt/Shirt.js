@@ -30,7 +30,6 @@ class Shirt extends Component {
     
 
     render() {
-        console.log('shirt page', this.props.shirts)
         return (
             <div>
                 <Nav />

@@ -19,8 +19,8 @@ class Landing extends Component {
         return (
             <div>
                 <Nav/>
-
-                <hr/>
+                Landing Page
+                
                 * Insert Photos Here *
                 <Footer/>
             </div>

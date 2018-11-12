@@ -11,7 +11,6 @@ const GET_JACKET = 'GET_JACKET'
 const GET_ACCESSORY = 'GET_ACCESSORY'
 
 export default function reducer(state = initialState, action) {
-    console.log(state)
     switch (action.type) {
         case GET_SHIRT:
             return { ...state, shirts: action.payload }
@@ -36,7 +35,6 @@ export function getJackets (jackets) {
     }
 }
 export function getAccessories (acce) {
-    console.log('a', acce)
     return {
         type: GET_ACCESSORY,
         payload: acce

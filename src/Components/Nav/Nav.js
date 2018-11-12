@@ -18,7 +18,7 @@ class Nav extends Component {
         super()
 
         this.state = {
-
+            cartOpen: false
         }
     }
     login = () => {
@@ -29,7 +29,23 @@ class Nav extends Component {
 
         let location = `${auth0domain}/authorize?client_id=${clientId}&scope=${scope}&redirect_uri=${redirectUri}&response_type=code`
 
-        window.location = location
+        window.location = location     
+    }
+
+    openCart = () => {
+        let { cartOpen }= this.state 
+        
+        this.setState({ cartOpen: !cartOpen })
+
+        if (cartOpen) {
+            document.getElementById('mySidenav').style.width = '250px'
+        } else {
+            this.closeCart()
+        }
+    }
+    
+    closeCart = () => {
+        document.getElementById("mySidenav").style.width = "0px";
     }
 
 
