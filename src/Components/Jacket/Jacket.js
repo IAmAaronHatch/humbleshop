@@ -34,11 +34,12 @@ class Jacket extends Component {
         return (
             <div>
                 <Nav />
-                Jackets
                 {this.props.jackets.map(jacket => {
                     return (
                         <div key={jacket.product_id}>
+                            <img src={jacket.product_img} alt='Jacket Product Image'/>
                             <span>{jacket.product_name}</span>
+                            <span>{jacket.product_price}</span>
                         </div>
                     )
                 })}

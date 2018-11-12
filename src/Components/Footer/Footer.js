@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import { Link } from 'react-router-dom'
 // import axios from 'axios'
 
 class Footer extends Component {
@@ -8,10 +9,10 @@ class Footer extends Component {
             <div>
                 * Insert Mail Insert *
 
-                * little Logo Home Button *
+                <Link to='/'>Home</Link>
 
                 * Insert Twitter *
-                * Insert Instagram *
+                <a href='https://www.instagram.com/iamnotaaronhatch/?hl=en'>Instagram</a>
                 {/* About Page? */}
             </div>
         )

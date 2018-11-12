@@ -14,7 +14,7 @@ class Accessory extends Component {
         }
     }
 
-    componentDidMount(){
+    componentDidMount() {
         let { getAccessories } = this.props
         axios.get('/api/products/acc').then(results => {
             getAccessories(results.data)
@@ -32,12 +32,13 @@ class Accessory extends Component {
     render() {
         return (
             <div>
-                <Nav/>
-                Accessories
+                <Nav />
                 {this.props.accessories.map(acc => {
                     return (
                         <div key={acc.product_id}>
-                        <span>{acc.product_name}</span>
+                            <img src={acc.product_img} alt='Accessories Product Image'/>
+                            <span>{acc.product_name}</span>
+                            <span>{acc.product_price}</span>
                         </div>
                     )
                 })}
@@ -53,4 +54,4 @@ let mapStateToProps = state => {
     }
 }
 
-export default connect(mapStateToProps, {getAccessories})(Accessory)
+export default connect(mapStateToProps, { getAccessories })(Accessory)
