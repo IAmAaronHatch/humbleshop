@@ -1,19 +1,62 @@
-.main-center{
-}
-.main-logo {
-    text-decoration: none;
-    color: #2f2f2f;
-    font-size: 40px;
+
+/* ---------- LOGOS -------- */
+/* WHOLE MAIN NAV BOX */
+.main-container {
+    display: flex;
+    flex-direction: column;
+    position: fixed;
+    background-color: #f7f7f7;
+    width: 100%;
 }
 
+/* Contains the logo as well as the cart and the login button */
+.top-container {
+    display: flex;
+    flex-direction: row;
+    height: 14vh;
+    justify-content: center;
+    align-items: center;
+}
+
+/* The box that holds the logo */
+.main-center {
+    width: 70%;
+    float: left;
+}
+
+/* the box on either side of the logo box */
+.main-left, .main-right {
+    width: 10%;
+    float: left;
+}
+/* the box that holds the cart and login buttons */
+.main-right {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    align-items: center
+}
+
+/* The logo lettering */
+#main-logo {
+    text-decoration: none;
+    color: #2f2f2f;
+    font-size: 60px;
+    letter-spacing: 5px
+}
+
+
+/* ---------- LINKS -------- */
+/* the box that holds the links */
 .link-main {
     width: 100%;
-    height: 30px;
+    height: 5vh;
     display: flex;
     align-items: center;
     justify-content: center;
+    border-top: #2f2f2f 1px solid;
+    border-bottom: #2f2f2f 1px solid
 }
-
 .link-container {
     width: 60%;
     height: 100%;
@@ -21,9 +64,9 @@
     align-items: center;
     justify-content: space-evenly;
 }
-
 #link {
     text-decoration: none;
     color: #2f2f2f;
-    font-size: 16px
+    font-size: 16px;
+    letter-spacing: 1px;
 }

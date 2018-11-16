@@ -4,15 +4,12 @@ import { connect } from 'react-redux'
 import { getShirts } from '../../Redux/Reducers/items'
 import Nav from '../Nav/Nav';
 import Footer from '../Footer/Footer';
+import ShirtWrapper from './ShirtWrapper';
+
+import './Shirt.css'
 
 class Shirt extends Component {
-    constructor() {
-        super()
-
-        this.state = {
-            isDisplayOpen: false
-        }
-    }
+    
 
     componentDidMount() {
         let { getShirts } = this.props
@@ -20,28 +17,26 @@ class Shirt extends Component {
             getShirts(results.data)
         })
     }
-    
-    openBuyDisplay = () => {
-        this.setState ({
-            isDisplayOpen: true
-        })
-    }
-    
+
     
 
+
+
     render() {
+        let { shirts } = this.props
         return (
-            <div>
+            <div >
                 <Nav />
-                {this.props.shirts.map(shirt => {
-                    return (
-                        <div key={shirt.product_id}>
-                            <img src={shirt.product_img} alt='Shirt Product Image'/>
-                            <span>{shirt.product_name}</span>
-                            <span>{shirt.product_price}</span>
-                        </div>
-                    )
-                })}
+                <div className='main'>
+                    {
+                        shirts.map ((s) => (
+                            <div key={s.product_id}>
+                                <ShirtWrapper key={s.product_id} s={s}/>
+                            </div>
+                        ))
+                    }
+                </div>
+                
                 <Footer />
             </div>
         )
@@ -54,4 +49,4 @@ let mapStateToProps = state => {
     }
 }
 
-export default connect(mapStateToProps, {getShirts})(Shirt)
+export default connect(mapStateToProps, { getShirts })(Shirt)

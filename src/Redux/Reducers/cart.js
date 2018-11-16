@@ -34,10 +34,10 @@ export function getCart () {
         payload: null
     }
 }
-export function addToCart () {
+export function addToCart (result) {
     return {
         type: ADD_TO_CART,
-        payload: null
+        payload: result
     }
 }
 export function updateQuantity () {

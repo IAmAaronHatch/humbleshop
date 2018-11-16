@@ -4,6 +4,7 @@ import { connect } from 'react-redux'
 import { getAccessories } from '../../Redux/Reducers/items'
 import Nav from '../Nav/Nav';
 import Footer from '../Footer/Footer';
+import AccWrapper from './AccWrapper';
 
 class Accessory extends Component {
     constructor() {
@@ -30,18 +31,19 @@ class Accessory extends Component {
 
 
     render() {
+        let { accessories } = this.props 
         return (
             <div>
                 <Nav />
-                {this.props.accessories.map(acc => {
-                    return (
-                        <div key={acc.product_id}>
-                            <img src={acc.product_img} alt='Accessories Product Image'/>
-                            <span>{acc.product_name}</span>
-                            <span>{acc.product_price}</span>
-                        </div>
-                    )
-                })}
+                {
+                    accessories.map ((a) => {
+                        return (
+                            <div key={a.product_id}>
+                                <AccWrapper key={a.product_id} a={a} />
+                            </div>
+                        )
+                    })
+                }
                 <Footer />
             </div>
         )

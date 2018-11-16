@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
-// import axios from 'axios'
 import { Link } from 'react-router-dom'
+import { connect } from 'react-redux'
 
 // Components 
 import Cart from '../Cart/Cart'
@@ -14,13 +14,6 @@ import './Nav.css'
 // let { login } = methods
 
 class Nav extends Component {
-    constructor() {
-        super()
-
-        this.state = {
-            cartOpen: false
-        }
-    }
     login = () => {
         let auth0domain = `https://${process.env.REACT_APP_AUTH0_DOMAIN}`
         let clientId = process.env.REACT_APP_AUTH0_CLIENT_ID
@@ -29,41 +22,25 @@ class Nav extends Component {
 
         let location = `${auth0domain}/authorize?client_id=${clientId}&scope=${scope}&redirect_uri=${redirectUri}&response_type=code`
 
-        window.location = location     
+        window.location = location
     }
-
-    openCart = () => {
-        let { cartOpen }= this.state 
-        
-        this.setState({ cartOpen: !cartOpen })
-
-        if (cartOpen) {
-            document.getElementById('mySidenav').style.width = '250px'
-        } else {
-            this.closeCart()
-        }
-    }
-    
-    closeCart = () => {
-        document.getElementById("mySidenav").style.width = "0px";
-    }
-
 
     render() {
+        let { user } = this.props
         return (
-            <div>
-                {/* * Insert Logo Here * */}
-                <div className='main-center'>
-                    <Link className='main-logo' to='/'> humble shop. </Link>
-
-                    {/* Right Side */}
-                    <div>
-                        <p onClick={this.login}> Login </p> |
-                    <Cart />
+            <div className='main-container'>
+                <div className='top-container'>
+                    <div className='main-left'>
                     </div>
-
+                    <div className='main-center'>
+                        <Link id='main-logo' to='/'> humble shop. </Link>
+                    </div>
+                    <div className='main-right'>
+                        
+                        <Cart />
+                    </div>
                 </div>
-                <hr />
+
                 <div className='link-main'>
                     <div className='link-container'>
                         <Link to='/shirts' id='link'> shirts. </Link>
@@ -72,11 +49,16 @@ class Nav extends Component {
                     </div>
                 </div>
 
-                <hr />
 
             </div>
         )
     }
 }
 
-export default Nav
+let mapStateToProps = state => {
+    return {
+        user: state.user.data
+    }
+}
+
+export default connect(mapStateToProps)(Nav)

@@ -6,7 +6,7 @@ class Footer extends Component {
 
     render() {
         return (
-            <div>
+            <div className='main'>
                 * Insert Mail Insert *
 
                 <Link to='/'>Home</Link>
